@@ -25,13 +25,13 @@ word = words[random.randrange(0, len(words))]
 print(f"Can you make up {WORDS_TO_WIN} words from letters in word provided by me?")
 print(f"Your word is '{word}'")
 
-elemetns = []
+elements = []
 while not is_game_over():
     guess = input("Your next take: ")
-    if guess in elemetns:
+    if guess in elements:
         print("You can use one word, one time")
         continue
-    elemetns.append(guess)
+    elements.append(guess)
     if guess in full_list:
         guessed += 1
         guesses.append(guess)
@@ -43,6 +43,8 @@ while not is_game_over():
         errors += 1
         print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
 
+else:
+    print("You lose")
 
 
 
